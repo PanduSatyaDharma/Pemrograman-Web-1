@@ -1,0 +1,165 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+header .container-judul {
+    flex: 1;
+    text-align: center;
+}
+
+header .container-judul h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+header .container-img {
+    flex: 1;
+    background-image: url('img/hotel.jpeg');
+    background-size: cover;
+    background-position: right;
+    height: 100px;
+}
+
+/* Navigasi */
+nav {
+    background-color: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 13px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    top: 48px;
+    left: 0;
+    padding: 0;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+nav ul li ul li {
+    width: 200px;
+    position: relative;
+}
+
+nav ul li ul li ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 200px;
+}
+
+nav ul li ul li:hover > ul {
+    display: block;
+}
+
+/* Main Content */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 15px;
+    background-color: #575757;
+}
+
+.leftbar {
+    width: 100%;
+    max-width: 300px;
+}
+
+.leftbar iframe {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Content */
+.content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 gambar per baris */
+    gap: 15px; /* Jarak antar gambar */
+    background-color: white;
+    padding: 20px;
+}
+
+.content img {
+    width: 100%;
+    height: auto; /* Agar gambar tetap proporsional */
+    border-radius: 5px;
+    transition: transform 0.3s ease; /* Menambahkan efek saat gambar di-hover */
+}
+
+.content img:hover {
+    transform: scale(1.05); /* Perbesar sedikit gambar saat di-hover */
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li ul {
+        position: static;
+    }
+}

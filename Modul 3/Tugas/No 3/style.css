@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+/* Submenu styles */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    top: 48px;
+    left: 0;
+    padding: 0;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+nav ul li ul li {
+    width: 200px;
+    position: relative;
+}
+
+/* Dropdown for sub-submenu */
+nav ul li ul li ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 200px;
+}
+
+nav ul li ul li:hover > ul {
+    display: block;
+}
+
+section {
+    display: flex;
+    gap: 2rem;
+    padding: 20px;
+}
+
+.leftbar {
+    width: 30%;
+}
+
+.leftbar iframe {
+    width: 100%;
+    height: 300px;
+}
+
+.content {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.content img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}

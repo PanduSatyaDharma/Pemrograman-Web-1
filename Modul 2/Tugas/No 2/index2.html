@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Tambah Data</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Form Tambah Data Kamar</h1>
+      <form
+        id="formDataKamar"
+        action="#"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="form-group">
+          <label for="idKamar">ID Kamar:</label>
+          <input type="text" id="idKamar" name="idKamar" required />
+        </div>
+        <div class="form-group">
+          <label for="gambarRuangan">Gambar Ruangan:</label>
+          <input type="file" id="gambarRuangan" name="gambarRuangan" required />
+        </div>
+        <div class="form-group">
+          <label for="jenisKamar">Jenis Kamar:</label>
+          <input type="text" id="jenisKamar" name="jenisKamar" required />
+        </div>
+        <div class="form-group">
+          <label for="hargaKamar">Harga:</label>
+          <input type="number" id="hargaKamar" name="hargaKamar" required />
+        </div>
+        <div class="form-group">
+          <label for="fasilitasKamar">Fasilitas:</label>
+          <input
+            type="text"
+            id="fasilitasKamar"
+            name="fasilitasKamar"
+            required
+          />
+        </div>
+        <button type="submit" onclick="return validateFormKamar()">
+          Simpan Data Kamar
+        </button>
+      </form>
+
+      <h1>Form Tambah Data Fasilitas</h1>
+      <form id="formFasilitas" action="#" method="post">
+        <div class="form-group">
+          <label for="idFasilitas">ID:</label>
+          <input type="text" id="idFasilitas" name="idFasilitas" required />
+        </div>
+        <div class="form-group">
+          <label for="namaFasilitas">Nama:</label>
+          <input type="text" id="namaFasilitas" name="namaFasilitas" required />
+        </div>
+        <div class="form-group">
+          <label for="jenisFasilitas">Fasilitas:</label>
+          <input
+            type="text"
+            id="jenisFasilitas"
+            name="jenisFasilitas"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="hargaWeekend">Harga Weekend:</label>
+          <input type="number" id="hargaWeekend" name="hargaWeekend" required />
+        </div>
+        <div class="form-group">
+          <label for="hargaWeekday">Harga Weekday:</label>
+          <input type="number" id="hargaWeekday" name="hargaWeekday" required />
+        </div>
+        <div class="form-group">
+          <label for="kuota">Kuota:</label>
+          <input type="number" id="kuota" name="kuota" required />
+        </div>
+        <div class="form-group">
+          <label for="jamBuka">Jam Buka:</label>
+          <input type="time" id="jamBuka" name="jamBuka" required />
+        </div>
+        <div class="form-group">
+          <label for="jamTutup">Jam Tutup:</label>
+          <input type="time" id="jamTutup" name="jamTutup" required />
+        </div>
+        <button type="submit" onclick="return validateFormFasilitas()">
+          Simpan Data Fasilitas
+        </button>
+      </form>
+    </div>
+
+    <script>
+      function validateFormKamar() {
+        const idKamar = document.getElementById("idKamar").value.trim();
+        const hargaKamar = document.getElementById("hargaKamar").value;
+        const fasilitasKamar = document
+          .getElementById("fasilitasKamar")
+          .value.trim();
+
+        if (idKamar === "") {
+          alert("ID Kamar tidak boleh kosong");
+          return false;
+        }
+        if (hargaKamar <= 0) {
+          alert("Harga kamar harus lebih dari 0");
+          return false;
+        }
+        if (fasilitasKamar.length < 5) {
+          alert("Fasilitas kamar harus memiliki minimal 5 karakter");
+          return false;
+        }
+        alert("Data Kamar berhasil disimpan!");
+        return true;
+      }
+
+      function validateFormFasilitas() {
+        const idFasilitas = document.getElementById("idFasilitas").value.trim();
+        const hargaWeekend = document.getElementById("hargaWeekend").value;
+        const hargaWeekday = document.getElementById("hargaWeekday").value;
+        const kuota = document.getElementById("kuota").value;
+
+        if (idFasilitas === "") {
+          alert("ID Fasilitas tidak boleh kosong");
+          return false;
+        }
+        if (hargaWeekend <= 0 || hargaWeekday <= 0) {
+          alert("Harga harus lebih dari 0");
+          return false;
+        }
+        if (kuota <= 0) {
+          alert("Kuota harus lebih dari 0");
+          return false;
+        }
+        alert("Data Fasilitas berhasil disimpan!");
+        return true;
+      }
+    </script>
+  </body>
+</html>
